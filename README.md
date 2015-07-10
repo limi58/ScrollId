@@ -1,11 +1,13 @@
 # ScrollId
 A full screen pages scrolling plugin,depend on jQuery and may be Hammer.js
+
+一款轻量级的 **滚动插件**，以 `location.hash` 变化为驱动，替换浏览器默认的动作，缓动到指定 hash 的 id 位置。样式稍加处理即可成为 **全屏滚动插件** 。
 # Demo
 Demo is [here](http://www.imbgf.com/home/about)
 # Including files
     <script type="text/javascript" src='jquery.js'></script>
     <script type="text/javascript" src='ScrollId.js'></script>
-# Usage 用法（前面是练英文—_—）
+# Usage 
 ## 1. 构建HTML
 推荐以下结构，当然标签和 id 可以随意。本插件主要作用是 **整屏滚动到指定 id**，因此必须设置每块的id
 
@@ -16,7 +18,7 @@ Demo is [here](http://www.imbgf.com/home/about)
         // ...
     </div>
 ## 2. 确保容器100%高度
-从根节点到每屏的 section 高度都要设为100%
+从根节点到每屏的 `section` 高度都要设为100%
 
     html,body{height:100%}
     .container{height:100%}
@@ -72,3 +74,6 @@ Demo is [here](http://www.imbgf.com/home/about)
 *  setHashByScroll( isSrollTop )
 
 `isSrollTop：`true 为向上一块屏滚动，反之
+
+# Browser support
+All modern browsers exclude IE8 -
