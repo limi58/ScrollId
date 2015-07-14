@@ -1,0 +1,26 @@
+{
+  "name": "ScrollId",
+  "version": "1.0.0",
+  "description": "A full screen pages scrolling plugin,depend on jQuery and may be Hammer.js",
+  "main": "ScrollId.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-header": "^1.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/limi58/ScrollId.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limi58/ScrollId/issues"
+  },
+  "homepage": "https://github.com/limi58/ScrollId"
+}
