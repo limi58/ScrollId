@@ -1,12 +1,8 @@
-/**
- * ScrollId V1.0 2015/7/9/
- * Copyright limi58
- * http://www.imbgf.com
- */
 
-(function(){
+'use strict';
+(function(exportName){
 
-
+	// 集成 jQuery.easing
 	jQuery.easing['jswing'] = jQuery.easing['swing'];
 
 	jQuery.extend( jQuery.easing,
@@ -165,8 +161,8 @@
 
 		run:function(){
 
-			// 设置各个id的top
-			this.setTop();
+			// 设置各个id的top 和顺序
+			this.setInit();
 
 			if(this.isTouch){
 				// 阻止触摸划屏的默认动作
@@ -197,13 +193,24 @@
 				try{
 					this.idInfoObj[currentHash]['beforeFun']();
 				}catch(e){}
-				$('body').animate({'scrollTop':top} , this.speed , this.ease , this.idInfoObj[targetHash]['afterFun']);
+				$('body,html').animate({'scrollTop':top} , this.speed , this.ease , this.idInfoObj[targetHash]['afterFun']);
 			}.bind(this))
 
-			// 监听鼠标滚轮事件
+
+			// 监听鼠标滚轮事件 firefox
+			window.addEventListener('DOMMouseScroll',function(e){
+				e.preventDefault();
+				if(e.detail < 0){
+					this.setHashByScroll(true);
+				}else{
+					this.setHashByScroll(false);
+				}
+			}.bind(this))
+
+			// 监听鼠标滚轮事件 chrome
 			window.addEventListener('mousewheel',function(e){
 				e.preventDefault();
-				if(e.wheelDelta > 0 || e.detail > 0){
+				if(e.wheelDelta > 0){
 					this.setHashByScroll(true);
 				}else{
 					this.setHashByScroll(false);
@@ -234,11 +241,14 @@
 			return firstId;
 		},
 
-		// 获取每个滚动对象 id 的离屏幕的 top 值并赋值给 idInfoObj
-		setTop:function(){
+		// 获取每个滚动对象 id 的离屏幕的 top 值和顺序并赋值给 idInfoObj
+		setInit:function(){
+			var i = 0;
 			for(var ii in this.idInfoObj){
 				var idStr = '#' + ii;
 				this.idInfoObj[ii]['top'] = (parseFloat($(idStr).position().top)).toFixed(1);
+				this.idInfoObj[ii]['alias'] = i;
+				i ++;
 			}
 		},
 		
@@ -282,7 +292,7 @@
 
 	}
 
-	window['ScrollId'] = ScrollId;
+	window[exportName] = ScrollId;
 
-})()
+})('ScrollId')
 

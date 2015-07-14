@@ -1,7 +1,7 @@
 # ScrollId
 A full screen pages scrolling plugin,depend on jQuery and may be Hammer.js
 
-一款轻量级的 **滚动插件**，以 `location.hash` 变化为驱动，替换浏览器默认的动作，缓动到指定 hash 的 id 位置。样式稍加处理即可成为 **全屏滚动插件** 。
+一个轻量级的 **滚动插件**，以 `location.hash` 变化为驱动，替换浏览器默认的动作，缓动到指定 hash 的 id 位置。样式稍加处理即可成为 **全屏滚动插件** 。
 # Demo
 Demo is [here](http://www.imbgf.com/home/about)
 # Including files
@@ -33,7 +33,6 @@ Demo is [here](http://www.imbgf.com/home/about)
      {
         id 名称 : 
        {
-          alias : 滚动顺序 ,
           beforeFun : 离开该屏之前的callback（可选）,
           afterFun : 到达该 id 后的callback（可选）
        }
@@ -42,14 +41,13 @@ Demo is [here](http://www.imbgf.com/home/about)
 第二个参数是一般设置，结构为
 
     {配置项 : 值}
-例如，以下配置的是有三个 id 为 sec0 sec1 sec2 的 full page ， 顺序为正常顺序。在离开 sec2 前会弹出字符串 "b"，在滚动到 sec 之后会弹出字符串 "a"，滚动速度是 1000 毫秒
+例如，以下配置的是有三个 id 为 sec0 sec1 sec2 的 full page .在离开 sec2 前会弹出字符串 "b"，在滚动到 sec 之后会弹出字符串 "a"，滚动速度是 1000 毫秒
 
     scroll.config(
 		{
-			sec0 : {alias : 0},
-			sec1 : {alias : 1},
+			sec0 : {},
+			sec1 : {},
 			sec2 : {
-				alias : 2 , 
 				beforeFun : function(){alert('b')},
 				afterFun : function(){alert('a')}
 			}
