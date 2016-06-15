@@ -2,9 +2,13 @@
   "name": "scroll-id",
   "version": "1.0.0",
   "description": "",
-  "main": "ScrollId.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "set NODE_ENV=development&&webpack --watch ./src/ScrollId.js ./dist/ScrollId.js",
+    "build": "npm run dev&&npm run min",
+    "dev": "set NODE_ENV=development&&webpack ./src/ScrollId.js ./dist/ScrollId.js",
+    "min": "set NODE_ENV=production&&webpack -p src/ScrollId.js dist/ScrollId.min.js",
+    "test": "node ./test/test.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +28,9 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "ease-animate": "^1.1.2",
+    "easy-touch": "^1.0.0"
   }
 }
