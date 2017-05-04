@@ -1,5 +1,5 @@
 const assert = require('assert')
-const ScrollId = require('../dist/ScrollId.min.js')
+const ScrollId = require('../dist/scroll-id.js')
 
 console.time('test')
 

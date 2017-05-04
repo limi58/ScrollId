@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "standard",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "generator-star-spacing": ["error", {"before": true, "after": false}],
+    "comma-dangle": ["error", "always"],
+    "no-return-assign": ["error"]
+  }
+}
