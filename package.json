@@ -1,6 +1,6 @@
 {
   "name": "scroll-id",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "js, full pages by hash change",
   "main": "dist/scroll-id.js",
   "scripts": {
